@@ -1,0 +1,113 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.main-container{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.time-display{
+    position: absolute;
+    bottom: 10%;
+    color: white;
+    font-size: 40px;
+}
+.sound-picker, .time-selector, .player-container{
+    height: 80%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.player-container{
+    position: relative;
+}
+.player-container> svg{
+    position: absolute;
+    height: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-90deg);
+    pointer-events: none;
+}
+.video-container{
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    z-index: -10;
+}
+.time-selector button,
+ .sound-picker button{
+    color: white;
+    height: 10%;
+    background: none;
+    border: 2px solid white;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 20px;
+    width: 30%;
+    transition: all 0.5s ease;
+}
+.time-selector button:hover{
+    color: lightcyan;
+    background-color: black;
+}
+.sound-picker button{
+    border: none;
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    padding: 20px;
+}
+.sound-picker button:nth-child(1){
+    background-color: steelblue;
+}
+.sound-picker button:nth-child(2){
+    background-color: lightsalmon;
+}
+.sound-picker button img{
+    height: 100%;
+}
+video {
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    z-index: -10;
+}
+
+@media screen and (max-width: 768px){
+    video{
+        width: auto;
+        height: 100%;
+    }
+    .time-selector button{
+        width: 50%;
+    }
+}
+@media screen and (max-width: 500px){
+    video{
+        width: auto;
+        height: 100%;
+    }
+    .main-container{
+        flex-direction: column;
+    }
+    .sound-picker, .time-selector, .player-container {
+        flex-direction: row;
+        width: 100%;
+    }
+    .time-selector button{
+        margin: 10px;
+        height: 30%;
+        width: 50%;
+    }
+    .player-container> svg{
+        height: 100%;
+    }
+}
